@@ -1,10 +1,10 @@
 package org.example;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world");
-
-        evenNumbers(20);
+        compairString();
     }
     private static void printOneToTen(){
         for(int i = 0; i <= 10; i++){
@@ -19,4 +19,34 @@ public class Main {
         }
     }
 
+    private static String joinWords(String [] words){
+        StringBuilder builder = new StringBuilder();
+        for (String w : words){
+            builder.append(w);
+        }
+        return builder.toString();
+    }
+
+    private static boolean isPermutation(String s, String t){
+
+        if ( s.length() != t.length()){
+            return false;
+        }
+
+        return sort(s).equals(sort(t));
+
+    }
+
+    private static String sort(String s){
+        char [] words = s.toCharArray();
+        Arrays.sort(words);
+        return new String(words);
+    }
+
+    private static void compairString (){
+        String fullName = new String("Ranajit khandual");
+        System.out.println(fullName.lines().toString());
+    }
+
 }
+
